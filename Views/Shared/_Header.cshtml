@@ -1,0 +1,91 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@model PS1_MIC_090_Core.Models.HeaderViewModel
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    bool hasheader = false;
+
+    if (Model is null)
+    {
+        hasheader = false;
+    }
+    else
+    {
+        if (string.IsNullOrEmpty(Model.CompanyName))
+        {
+            Model.CompanyName = "Company Logo";
+        }
+        if (string.IsNullOrEmpty(Model.RoleName))
+        {
+            Model.RoleName = "No Role";
+        }
+        if (string.IsNullOrEmpty(Model.Email))
+        {
+            Model.Email = "No Email";
+        }
+        if (string.IsNullOrEmpty(Model.UserName))
+        {
+            hasheader = false;
+            Model.UserName = "No UserName";
+        }
+        hasheader = true;
+    }
+
+     var username = Context.User.Identity.Name;
+}
+
+
+
+@if (hasheader)
+{
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Company Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-success bg-success">
+        <div class="container">
+            @Html.ActionLink(Model.CompanyName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand text-white" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-primary">@Model.RoleName</button>
+                    <button class="btn btn-secondary">@Model.UserName</button>
+                    <button class="btn btn-info">@Model.Email</button>
+                    <button class="btn btn-outline-warning">@Html.ActionLink("LogOut", "Logout", "Home", new { area = "" }, new { @class = "nav-link" })</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+}

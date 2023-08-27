@@ -1,0 +1,32 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+
+    switch (Convert.ToBoolean(@Configuration["IsProduction"]))
+    {
+        case true:
+            <script src="~/view-resources/_bundles/lib.bundles.min.js" asp-append-version="true"></script>
+            <script src="~/view-resources/_bundles/angular.bundles.min.js" asp-append-version="true"></script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>
+
+            break;
+    
+        default:
+
+            <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+            <script src="~/lib/jquery-validation/dist/jquery.validate.js" asp-append-version="true"></script>
+            <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" asp-append-version="true"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js" asp-append-version="true"></script>
+            <script src="~/lib/angular.js/angular.js" asp-append-version="true"></script>
+            <script src="~/lib/bootbox.js/bootbox.js" asp-append-version="true"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+
+            break;
+    }
+}
+

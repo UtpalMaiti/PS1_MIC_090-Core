@@ -1,0 +1,179 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model PS1_MIC_090_Core.Models.CreateApplicationViewModel
+
+@{
+    ViewBag.Title = "HouseholdInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col ">
+        <h2 class="float-start">Create Application</h2>
+    </div>
+    <div class="col ">
+        <p class="text-danger float-end">*Required field</p>
+    </div>
+</div>
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x=>x.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
+
+    <div class="form-horizontal">
+        <h6>Household Member <span id="cuerrentItem">1</span> of <span id="maxlist">1</span></h6>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row">
+            <div class="col col-md-3 ">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Suffix, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.Suffix, Model.Suffixs, new { @class = "form-select" })
+                        @Html.ValidationMessageFor(model => model.Suffix, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DOB, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.DOB, "{0:MM/dd/yyyy}", new { @class = "form-control dateInput", @placeholder = "Please input date" })
+                        @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.RadioButtonFor(model => model.Gender, "Male", new { htmlAttributes = new { @class = "form-control" } })  @Html.Label("Male")
+                        @Html.RadioButtonFor(model => model.Gender, "Female", new { htmlAttributes = new { @class = "form-control" } })  @Html.Label("Female")
+                        @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @*   <input type="submit" value="Create" class="btn btn-default" />*@
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col ">
+        <div class="btn-group float-xxl-end">
+            <button class="btn btn-success addMember" id="addMember" onclick="addMember();">
+                Add Member
+                @*@Html.ActionLink("Add Member", "ConfirmationScreen")*@
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mt-2">
+    <div class="col-12">
+        <table id="createApplication" class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Middle Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Suffix</th>
+                    <th scope="col">DateOfBirth</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Middle Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Suffix</th>
+                    <th scope="col">DateOfBirth</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+
+<div class="row mt-2">
+    <div class="col">
+        <div class="btn-group float-start">
+            <button class="btn btn-success" id="saveandExit">
+                Save and Exit
+                @*@Html.ActionLink("Save and Exit", "Index")*@
+            </button>
+        </div>
+    </div>
+    <div class="col ">
+        <div class="btn-group float-xxl-end">
+            <button class="btn btn-success" aria-current="page">
+                @Html.ActionLink("Back", "Index")
+            </button>
+            <button class="btn btn-success">
+                @Html.ActionLink("Next", "RelationshipInfoScreen")
+            </button>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/view-resources/Home/HouseholdInfo.js" asp-append-version="true"></script>
+}
+
+@section Styles {
+    <link href="~/view-resources/Home/HouseholdInfo.css" rel="stylesheet" asp-append-version="true" />
+}

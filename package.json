@@ -1,0 +1,10 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1"
+  }
+}
