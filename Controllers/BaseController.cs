@@ -4,7 +4,10 @@ namespace PS1_MIC_090_Core.Controllers
 {
     public abstract class BaseController : Controller
     {
-        protected BaseController() { }
+        protected BaseController()
+        {
+           
+        }
 
         public int GetCurrentUserId()
         {
@@ -46,5 +49,7 @@ namespace PS1_MIC_090_Core.Controllers
                 return HttpContext;
             }
         }
+
+        public IServiceProvider Provider { get; }
     }
 }

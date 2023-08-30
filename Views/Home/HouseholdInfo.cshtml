@@ -7,6 +7,8 @@
     ViewBag.Title = "HouseholdInfo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<section data-ng-controller="HouseholdInfoController">
+
 
 
 <div class="row">
@@ -103,9 +105,8 @@
     </div>
     <div class="col ">
         <div class="btn-group float-xxl-end">
-            <button class="btn btn-success addMember" id="addMember" onclick="addMember();">
+            <button class="btn btn-success addMember" id="addMember"">
                 Add Member
-                @*@Html.ActionLink("Add Member", "ConfirmationScreen")*@
             </button>
         </div>
     </div>
@@ -129,6 +130,17 @@
                 </tr>
             </thead>
             <tbody>
+                    <tr ng-repeat="app in applications">
+                        <td>{{app.applicationId}}</td>
+                        <td >{{app.firstName}}</td>
+                        <td>{{app.middleName}}</td>
+                        <td>{{app.lastName}}</td>
+                        <td>{{app.suffix}}</td>
+                        <td >{{app.firstName}}</td>
+                        <td >{{app.firstName}}</td>
+                        <td >{{app.firstName}}</td>
+                        <th >Edit</th>
+                    </tr>
             </tbody>
             <tfoot>
                 <tr>
@@ -153,7 +165,6 @@
         <div class="btn-group float-start">
             <button class="btn btn-success" id="saveandExit">
                 Save and Exit
-                @*@Html.ActionLink("Save and Exit", "Index")*@
             </button>
         </div>
     </div>
@@ -168,12 +179,12 @@
         </div>
     </div>
 </div>
-
+</section>
 
 @section Scripts {
-    <script src="~/view-resources/Home/HouseholdInfo.js" asp-append-version="true"></script>
+    <script src="/view-resources/home/householdinfo.js" asp-append-version="true"></script>
 }
 
 @section Styles {
-    <link href="~/view-resources/Home/HouseholdInfo.css" rel="stylesheet" asp-append-version="true" />
+    <link href="/view-resources/home/householdinfo.css" rel="stylesheet" asp-append-version="true" />
 }

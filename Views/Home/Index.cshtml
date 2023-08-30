@@ -3,50 +3,31 @@
 
 }
 
-<main>
-
- 
-
-    @if (ViewBag.hasCreateApplication != null && ViewBag.hasCreateApplication)
-    {
-        <section class="row">
-            <p>
-                <button class="btn btn-success btn-lg">
-                    @Html.ActionLink("Create Application", "HouseholdInfo")
 
 
-                </button>
-            </p>
-        </section>
-    }
-
-    @if (ViewBag.hasSearchApplication != null && ViewBag.hasSearchApplication)
-    {
-        <section class="row">
-            <p>
-                <button class="btn btn-success btn-lg">
-                    @Html.ActionLink("Search Application", "Search")
 
 
-                </button>
-            </p>
-        </section>
-    }
+
+<section class="row center ">
+       
+        @if (ViewBag.hasCreateApplication != null && ViewBag.hasCreateApplication)
+        {
+        <button class="btn btn-success btn-lg ">
+                @Html.ActionLink("Create Application", "HouseholdInfo")
+            </button>
+        }
+        @if (ViewBag.hasSearchApplication != null && ViewBag.hasSearchApplication)
+        {
+        <button class="btn btn-success btn-lg ">
+                @Html.ActionLink("Search Application", "Search")
+            </button>
+            }
+    </section>
 
 
-</main>
 @section Scripts {
+    <script src="~/view-resources/home/index.js" asp-append-version="true"></script>
 }
 @section Styles {
-    <style>
-        main {
-            margin-top: 15%;
-            margin-left: 20%;
-        }
-
-        a {
-            color: #ffffff;
-            text-decoration: auto;
-        }
-    </style>
+    <link href="~/view-resources/home/index.css" rel="stylesheet" asp-append-version="true" />
 }

@@ -3,10 +3,11 @@ using Dapper;
 
 using PS1_MIC_090_Core.Models.Constants;
 using PS1_MIC_090_Core.Repository.Domain;
+using PS1_MIC_090_Core.Repository.Contracts;
 
 namespace PS1_MIC_090_Core.Repository
 {
-    public interface IApplicationRepository
+    public interface IApplicationRepository:IRepository<Application>
     {
         Task<IEnumerable<Application>> QueryAsync(string sqlQuery);
     }

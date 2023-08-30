@@ -80,7 +80,7 @@ namespace PS1_MIC_090_Core
             app.UseRequestDecompression();
 
             // in Configure() method
-            app.UseWebOptimizer();
+            //app.UseWebOptimizer();
             app.UseStaticFiles();
 
             app.UseRouting();

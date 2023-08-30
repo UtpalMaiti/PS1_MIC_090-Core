@@ -24,6 +24,7 @@ namespace PS1_MIC_090_Core.Controllers
 {
     public class HomeController : BaseController
     {
+        private readonly IServiceProvider provider;
         private readonly ILogger<HomeController> _logger;
         private readonly IMapper mapper;
         private readonly IRepository<User> users;
@@ -45,7 +46,7 @@ namespace PS1_MIC_090_Core.Controllers
             IRepository<Relation> relations,
             IRepository<UserRoleMapping> userRoleMappings,
             IUserRepository userRepository
-            )
+           )
         {
             this._logger = logger;
             this.mapper = mapper;
