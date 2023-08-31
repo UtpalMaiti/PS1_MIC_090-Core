@@ -86,7 +86,7 @@ namespace PS1_MIC_090_Core.Controllers.Api
 
                 if (!ModelState.IsValid)
                 {
-                    return BadRequest(modelState:ModelState);
+                    return Ok(ModelState);
                 }
 
                 int currentUserId = GetCurrentUserId();
