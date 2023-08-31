@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+
+using Microsoft.AspNetCore.Mvc;
 
 using PS1_MIC_090_Core.Models;
 using PS1_MIC_090_Core.Models.Constants;
 using PS1_MIC_090_Core.Repository;
+using PS1_MIC_090_Core.Repository.Domain;
 using PS1_MIC_090_Core.Services;
 
 using System;
@@ -16,15 +19,18 @@ namespace PS1_MIC_090_Core.Controllers.Api
     public class ApplicationController : BaseController
     {
         private readonly ILogger<ApplicationController> _logger;
+        private readonly IMapper mapper;
         private readonly IApplicationRepository applicationRepository;
         private readonly IApplicationService applicationService;
 
         public ApplicationController(
             ILogger<ApplicationController> logger,
+            IMapper mapper,
             IApplicationRepository applicationRepository, 
             IApplicationService applicationService)
         {
             this._logger = logger;
+            this.mapper = mapper;
             this.applicationRepository = applicationRepository;
             this.applicationService = applicationService;
         }
@@ -73,19 +79,23 @@ namespace PS1_MIC_090_Core.Controllers.Api
 
         // POST api/<ApplicationController>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CreateApplicationViewModel model)
+        public async Task<IActionResult> Post([FromBody] List<CreateApplicationViewModel> model)
         {
             try
             {
+
                 if (!ModelState.IsValid)
                 {
                     return BadRequest(modelState:ModelState);
                 }
+
                 int currentUserId = GetCurrentUserId();
 
-                var apps = (await this.applicationRepository.GetAll());
+                List<Application> response = (await this.applicationService.CreateApplications(model, currentUserId));
 
-                return Created(new Uri(""), model);
+                //string uri = $"https://www.example.com/api/values/{createdResource.Id}?version={createdResource.Version}";
+
+                return Created(new Uri("/"), response);
             }
             catch (Exception ex)
             {

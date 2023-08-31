@@ -34,6 +34,9 @@ namespace PS1_MIC_090_Core.Models.Extensions
                 await context.HttpContext.SignOutAsync(
                     CookieAuthenticationDefaults.AuthenticationScheme);
             }
+
+            context.HttpContext.Response.StatusCode = 401;
+            //return await Task.CompletedTask;
         }
-    }
+}
 }

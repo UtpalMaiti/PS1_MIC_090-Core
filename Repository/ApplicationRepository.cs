@@ -17,7 +17,7 @@ namespace PS1_MIC_090_Core.Repository
 
         public ApplicationRepository(string? connectionString = default):base(connectionString)
         {
-            this.connectionString  = connectionString ?? DBConnect.APP_SQL;
+            this.connectionString  = connectionString ?? AppConst.APP_SQL;
         }
 
         public async Task<IEnumerable<Application>> QueryAsync(string sqlQuery)

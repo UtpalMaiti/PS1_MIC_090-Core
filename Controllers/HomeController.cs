@@ -19,12 +19,13 @@ using PS1_MIC_090_Core.Models.Utilities;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.WebUtilities;
 using static System.Net.WebRequestMethods;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PS1_MIC_090_Core.Controllers
 {
+
     public class HomeController : BaseController
     {
-        private readonly IServiceProvider provider;
         private readonly ILogger<HomeController> _logger;
         private readonly IMapper mapper;
         private readonly IRepository<User> users;
@@ -58,6 +59,7 @@ namespace PS1_MIC_090_Core.Controllers
             this.userRepository = userRepository;
         }
 
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult> Index()
         {
@@ -121,6 +123,7 @@ namespace PS1_MIC_090_Core.Controllers
             return View();
         }
 
+        //[AllowAnonymous]
         [HttpGet]
         public ActionResult Logon()
         {
@@ -172,6 +175,7 @@ namespace PS1_MIC_090_Core.Controllers
 
                     var claims = new List<Claim>
         {
+                        new Claim(ClaimTypes.NameIdentifier,user.UserId.ToString()),
                         new Claim(ClaimTypes.Name,user.UserName),
                         new Claim(ClaimTypes.Role, "Administrator"),
                         new Claim(ClaimTypes.Upn, "Administrator"),
@@ -325,6 +329,8 @@ namespace PS1_MIC_090_Core.Controllers
 
             try
             {
+               
+
                 model.Suffixs = (await this.nameSuffixs.
                     GetAll()).
                     Select(x =>
@@ -350,31 +356,49 @@ namespace PS1_MIC_090_Core.Controllers
         }
         public async Task<ActionResult> LogOut(string? returnUrl = null)
         {
-            if (!string.IsNullOrEmpty(ErrorMessage))
+            try
             {
-                ModelState.AddModelError(string.Empty, ErrorMessage);
+                if (!string.IsNullOrEmpty(ErrorMessage))
+                {
+                    ModelState.AddModelError(string.Empty, ErrorMessage);
+                }
+
+                // Clear the existing external cookie
+                await HttpContext.SignOutAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme);
+
+                ReturnUrl = returnUrl;
+
+                SetCurrentUserId(0);
+                base.UserLogOut();
             }
-
-            // Clear the existing external cookie
-            await HttpContext.SignOutAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme);
-
-            ReturnUrl = returnUrl;
-
-            SetCurrentUserId(0);
-            base.UserLogOut();
+            catch (Exception ex)
+            {
+                this._logger.LogError(ex, nameof(HomeController), nameof(LogOut));
+                throw;
+            }
+           
             return RedirectToAction(nameof(Logon));
         }
         public JsonResult ValidateName(string userName)
         {
-            if (!string.IsNullOrEmpty(userName) && userName.StartsWith("Pr"))
+            try
             {
-                return Json("Employee Name is already existing");
+                if (!string.IsNullOrEmpty(userName) && userName.StartsWith("Pr"))
+                {
+                    return Json("Employee Name is already existing");
+                }
+                else
+                {
+                    return Json(true);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return Json(true);
+                this._logger.LogError(ex, nameof(HomeController), nameof(ValidateName));
+                throw;
             }
+          
         }
         public IActionResult Privacy()
         {

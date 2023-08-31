@@ -16,7 +16,7 @@ namespace PS1_MIC_090_Core.Repository
 
         public Repository(string? connectionString = default)
         {
-            this.connectionString = connectionString ?? DBConnect.APP_SQL;
+            this.connectionString = connectionString ?? AppConst.APP_SQL;
         }
 
         public async Task<TEntity> Add(TEntity item, string? conSt = null)

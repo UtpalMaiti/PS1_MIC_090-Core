@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using PS1_MIC_090_Core.Services;
 using PS1_MIC_090_Core.Models.Extensions;
 using PS1_MIC_090_Core.Middlewares;
+using Microsoft.Net.Http.Headers;
+using PS1_MIC_090_Core.Models.Constants;
 
 namespace PS1_MIC_090_Core
 {
@@ -28,7 +30,24 @@ namespace PS1_MIC_090_Core
             // in configureServices() method 
             builder.Services.AddWebOptimizer();
 
-
+            builder.Services.AddCors(options =>
+                      options.AddPolicy(AppConst.CorsPolicy, builder =>
+                      {
+                          // Allow multiple HTTP methods  
+                          builder.WithMethods("GET", "POST", "PATCH", "DELETE", "OPTIONS")
+                            .WithHeaders(
+                              HeaderNames.Accept,
+                              HeaderNames.ContentType,
+                              HeaderNames.Authorization)
+                            .AllowCredentials()
+                            .SetIsOriginAllowed(origin =>
+                            {
+                                if (string.IsNullOrWhiteSpace(origin)) return false;
+                                if (origin.ToLower().StartsWith("http://localhost")) return true;
+                                return false;
+                            });
+                      })
+                    );
 
 
             builder.Services.AddSession(options =>
@@ -42,6 +61,7 @@ namespace PS1_MIC_090_Core
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
              .AddCookie(options =>
              {
+                 options.Cookie.Name = "Cookie_app";
                  options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
                  options.SlidingExpiration = true;
                  options.AccessDeniedPath = "/logon/";
@@ -73,6 +93,7 @@ namespace PS1_MIC_090_Core
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(AppConst.CorsPolicy);
 
             app.UseHttpsRedirection();
             app.UseRequestCulture();
@@ -80,7 +101,7 @@ namespace PS1_MIC_090_Core
             app.UseRequestDecompression();
 
             // in Configure() method
-            //app.UseWebOptimizer();
+            app.UseWebOptimizer();
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -91,7 +112,9 @@ namespace PS1_MIC_090_Core
             app.UseSession();
             var cookiePolicyOptions = new CookiePolicyOptions
             {
-                MinimumSameSitePolicy = SameSiteMode.Strict,
+                //MinimumSameSitePolicy = SameSiteMode.None,
+                Secure = CookieSecurePolicy.Always,
+                
             };
             app.UseCookiePolicy(cookiePolicyOptions);
 

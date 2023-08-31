@@ -6,6 +6,7 @@
 @{
     ViewBag.Title = "HouseholdInfo";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 <section data-ng-controller="HouseholdInfoController">
 
@@ -23,7 +24,7 @@
 
 
 
-@using (Html.BeginForm())
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { name = "addMemberForm", id = "addMemberFormId" }))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(x=>x.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -31,14 +32,21 @@
     <div class="form-horizontal">
         <h6>Household Member <span id="cuerrentItem">1</span> of <span id="maxlist">1</span></h6>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.ValidationSummary(false, "All Validation Summary", new { @class = "text-danger" },"Add Member Form")
+            @Html.ValidationMessage("Salary","Please enter salary", new { @class = "text-danger" },"Add Member Form")
 
         <div class="row">
             <div class="col col-md-3 ">
                 <div class="form-group">
-                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.FirstName, htmlAttributes: new { 
+                            @class = "control-label col-md-2"})
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.FirstName, new { 
+                                htmlAttributes = new { 
+                                    @class = "form-control", 
+                                    placeholder="" ,
+                                } 
+                            })
                         @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -105,7 +113,7 @@
     </div>
     <div class="col ">
         <div class="btn-group float-xxl-end">
-            <button class="btn btn-success addMember" id="addMember"">
+                <button class="btn btn-success addMember" id="addMember" ng-click="addMember()">
                 Add Member
             </button>
         </div>
@@ -130,7 +138,29 @@
                 </tr>
             </thead>
             <tbody>
-                    <tr ng-repeat="app in applications">
+                    <tr ng-repeat="app in unsavedMembers" ng-if="app" class=" animate-if">
+                        <td>{{app.applicationId}}</td>
+                        <td>{{app.firstName}}</td>
+                        <td>{{app.middleName}}</td>
+                        <td>{{app.lastName}}</td>
+                        <td>{{app.suffix}}</td>
+                        <td>{{app.firstName}}</td>
+                        <td>{{app.firstName}}</td>
+                        <td>{{app.firstName}}</td>
+                        <th>UNSAVED</th>
+                    </tr>
+                    <tr ng-if="applications && applications.length>0" class="animate-if">
+                        <th scope="col">#</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Middle Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Suffix</th>
+                        <th scope="col">DateOfBirth</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    <tr ng-repeat="app in applications" ng-if="app" class="animate-if">
                         <td>{{app.applicationId}}</td>
                         <td >{{app.firstName}}</td>
                         <td>{{app.middleName}}</td>
@@ -139,7 +169,7 @@
                         <td >{{app.firstName}}</td>
                         <td >{{app.firstName}}</td>
                         <td >{{app.firstName}}</td>
-                        <th >Edit</th>
+                        <th >SAVED</th>
                     </tr>
             </tbody>
             <tfoot>

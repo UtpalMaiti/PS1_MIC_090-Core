@@ -19,17 +19,17 @@ namespace PS1_MIC_090_Core.Repository
 
         public AppDbContext(string? connectionString = default) : base(GetOptions(connectionString: connectionString!))
         {
-            this.connectionString = connectionString ?? DBConnect.APP_SQL;
+            this.connectionString = connectionString ?? AppConst.APP_SQL;
         }
 
-        protected AppDbContext() : base(GetOptions(connectionString: DBConnect.APP_SQL))
+        protected AppDbContext() : base(GetOptions(connectionString: AppConst.APP_SQL))
         {
-            this.connectionString = connectionString ?? DBConnect.APP_SQL;
+            this.connectionString = connectionString ?? AppConst.APP_SQL;
         }
 
-        public AppDbContext(DbContextOptions options) : base(GetOptions(connectionString: DBConnect.APP_SQL))
+        public AppDbContext(DbContextOptions options) : base(GetOptions(connectionString: AppConst.APP_SQL))
         {
-            this.connectionString = connectionString ?? DBConnect.APP_SQL;
+            this.connectionString = connectionString ?? AppConst.APP_SQL;
 
         }
 
