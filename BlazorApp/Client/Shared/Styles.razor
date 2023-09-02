@@ -1,0 +1,22 @@
+﻿@if (isProduction)
+{
+    @* script *@
+    <script src="/view-resources/_bundles/angular.bundles.min.js" asp-append-version="true"></script>
+    <script src="/view-resources/_bundles/lib.bundles.min.js" asp-append-version="true"></script>
+    @* css *@
+    <link href="/view-resources/_bundles/lib.bundles.min.css" rel="stylesheet" asp-append-version="true" />
+
+}
+else
+{      @* script *@
+    <script src="/lib/angular.js/angular.js" asp-append-version="true"></script>
+    <script src="/lib/bootbox.js/bootbox.min.js" asp-append-version="true"></script>
+    @* css *@
+}
+
+
+
+@code {
+    private bool isProduction = false;
+
+}

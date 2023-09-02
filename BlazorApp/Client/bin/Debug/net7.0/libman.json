@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "angular.js@1.8.3",
+      "destination": "wwwroot/lib/angular.js/"
+    },
+    {
+      "library": "bootbox.js@6.0.0",
+      "destination": "wwwroot/lib/bootbox.js/"
+    }
+  ,
+{
+  "provider": "cdnjs",
+  "library": "animate.css@4.1.1",
+  "destination": "wwwroot/lib/animate.css/"
+}
+,
+{
+  "provider": "cdnjs",
+  "library": "bootstrap@5.3.1",
+  "destination": "wwwroot/lib/bootstrap/"
+}
+]
+}
