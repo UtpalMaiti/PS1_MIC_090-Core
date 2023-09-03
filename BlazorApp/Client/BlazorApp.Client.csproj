@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -22,6 +22,23 @@
 
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <!-- exclude Generated.cs from dotnet-watch -->
+    <!--<Compile Include="Generated.cs" Watch="false" />-->
+
+    <!-- exclude Strings.resx from dotnet-watch -->
+    <!--<EmbeddedResource Include="Strings.resx" Watch="false" />-->
+
+    <!-- exclude changes in this referenced project -->
+    <!--<ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" Watch="false" />-->
+
+    <!-- Exclude all Content items from being watched. -->
+    <Content Update="@(Content)" Watch="false" />
+    
+    <!-- extends watching group to include *.js files -->
+    <Watch Include="**\*.js" Exclude="node_modules\**\*;**\*.js.map;obj\**\*;bin\**\*" />
   </ItemGroup>
 
 </Project>

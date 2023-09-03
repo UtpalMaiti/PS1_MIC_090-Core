@@ -1,11 +1,41 @@
-﻿@using Microsoft.AspNetCore.Components.Authorization
+﻿@using BlazorApp.Client.Services;
+@using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @inject NavigationManager Navigation
+@inject IDataAccess DataRepository
 
 <AuthorizeView>
+
     <Authorized>
-        <a href="authentication/profile">Hello, @context.User.Identity?.Name!</a>
+
+       
+        <a href="authentication/profile">Hello, @context.User.Identity?.IsAuthenticated!</a>
+
+
+
+        <ul class="list-group">
+            @foreach (var entry in context.User.Claims)
+            {
+                <li class="list-group-item disabled" aria-disabled="true">@entry.Type  = @entry.Value</li>
+            }
+
+
+        </ul>
+        
+       
         <button class="nav-link btn btn-link" @onclick="BeginLogOut">Log out</button>
+
+        @if (customers != null)
+        {
+            <ul>
+                @foreach (var customer in customers)
+                {
+                    <li>@customer.FirstName @customer.LastName</li>
+                }
+            </ul>
+        }
+
+
     </Authorized>
     <NotAuthorized>
         <a href="authentication/register">Register</a>
@@ -13,9 +43,24 @@
     </NotAuthorized>
 </AuthorizeView>
 
+
 @code{
     private void BeginLogOut()
     {
         Navigation.NavigateToLogout("authentication/logout");
     }
+
+
+
+}
+
+@code {
+    private IReadOnlyList<Customer>? customers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        customers = await DataRepository.GetAllCustomersAsync();
+    }
+
+  
 }

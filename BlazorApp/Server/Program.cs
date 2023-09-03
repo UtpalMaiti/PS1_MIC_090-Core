@@ -16,6 +16,8 @@ using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.IdentityModel.Logging;
 using BlazorApp.Server.Repository.Core;
+using BlazorApp.Server.Services;
+using BlazorApp.Server.Utility;
 
 namespace BlazorApp
 {
@@ -55,7 +57,7 @@ namespace BlazorApp
                     cfg.RequireHttpsMetadata = false;
                     cfg.SaveToken = true;
                     cfg.Configuration = new OpenIdConnectConfiguration();
-                }); 
+                });
 
             //builder.Services.AddAuthorization(options =>
             //{
@@ -64,10 +66,14 @@ namespace BlazorApp
             //      .Build();
             //});
 
+            builder.Services.ConfigureCommonServices();
+        
+
             // Add framework services.
             builder.Services.AddMvc();
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
+            builder.Services.AddServerSideBlazor();
             builder.Services.AddHealthChecks();
             builder.Services.AddSignalR(hubOptions =>
             {
