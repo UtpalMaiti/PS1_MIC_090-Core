@@ -5,6 +5,7 @@ namespace BlazorApp.Client.Services
     public interface IDataAccess
     {
         Task<IReadOnlyList<Customer>> GetAllCustomersAsync();
+        IReadOnlyList<Customer> Users { get; set; }
     }
 
     public class Customer
@@ -14,6 +15,13 @@ namespace BlazorApp.Client.Services
     }
     public class DataAccess : IDataAccess
     {
+        private readonly HttpClient http;
+
+        public DataAccess()
+        {
+        }
+        public IReadOnlyList<Customer> Users { get; set; }
+
         public async Task<IReadOnlyList<Customer>> GetAllCustomersAsync()
         {
             IReadOnlyList < Customer > customers = new List<Customer>()

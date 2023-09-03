@@ -24,8 +24,16 @@ namespace BlazorApp.Client
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("BlazorApp.ServerAPI"));
 
 
-            builder.Services.AddSingleton<IDataAccess, DataAccess>();
+            builder.Services.AddTransient<IDataAccess, DataAccess>();
             builder.Services.AddSingleton<IWeatherService, WeatherService>();
+
+            builder.Services.AddTransient<TransientDisposable>();
+            builder.Services.AddTransient<HttpClient>();
+            builder.Services.AddScoped(sp =>
+                new HttpClient
+                {
+                    BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+                });
 
 
             builder.Services.AddApiAuthorization();

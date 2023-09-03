@@ -13,6 +13,8 @@ namespace BlazorApp.Server.Utility
             services.AddSingleton<IWeatherForecastService, WeatherForecastService>();
             services.AddScoped<IDataAccess, DataAccess>();
 
+         
+
         }
 
     }

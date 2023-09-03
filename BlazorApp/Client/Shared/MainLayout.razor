@@ -3,9 +3,26 @@
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @inject NavigationManager Navigation
 
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
 
+    <main>
+        <div class="top-row px-4 auth">
+            <LoginDisplay />
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        </div>
 
-<AuthorizeView>
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+    <footer>
+    </footer>
+</div>
+
+@* <AuthorizeView>
     <Authorized>
         <div class="page">
             <div class="sidebar">
@@ -30,6 +47,7 @@
         <a href="authentication/register">Register</a>
         <a href="authentication/login">Log in</a>
     </NotAuthorized>
-</AuthorizeView>
-
-
+</AuthorizeView> *@
+@* <a href="authentication/register">Register</a>
+<a href="authentication/login">Log in</a>
+ *@

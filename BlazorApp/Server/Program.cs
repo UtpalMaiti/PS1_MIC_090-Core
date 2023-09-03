@@ -67,7 +67,13 @@ namespace BlazorApp
             //});
 
             builder.Services.ConfigureCommonServices();
-        
+
+            builder.DetectIncorrectUsageOfTransients();
+            builder.Services.AddTransient<TransientDependency>();
+            builder.Services.AddTransient<ITransitiveTransientDisposableDependency,
+                TransitiveTransientDisposableDependency>();
+
+            builder.Services.AddScoped<BlazorServiceAccessor>();
 
             // Add framework services.
             builder.Services.AddMvc();
