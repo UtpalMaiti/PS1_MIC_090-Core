@@ -1,14 +1,39 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using BlazorApp.Server.Data;
+using BlazorApp.Server.Repository.Core;
+
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlazorApp.Server.Controllers
 {
     public class HomeAppController : Controller
     {
+        private readonly ApplicationDbContext context;
+        private readonly UserManager<AspNetUser> userManager;
+        private readonly SignInManager<AspNetUser> signInManager;
+
+        public HomeAppController(
+            ApplicationDbContext context,
+            UserManager<AspNetUser> userManager,
+            SignInManager<AspNetUser> signInManager,
+            IUserStore<AspNetUser> userStore,
+            ILogger<HomeAppController> logger,
+            IEmailSender emailSender
+            )
+        {
+            this.context = context;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
+        }
+
         // GET: HomeController
         public ActionResult Index()
         {
+            
             return View();
         }
         [AllowAnonymous]

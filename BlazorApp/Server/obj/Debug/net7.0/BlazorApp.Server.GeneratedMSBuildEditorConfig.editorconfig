@@ -164,8 +164,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/UTPAL/Downloads/PS1_MIC_090-Core/BlazorApp/Server/Areas/Identity/Pages/Shared/_LoginPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+[C:/Users/UTPAL/Downloads/PS1_MIC_090-Core/BlazorApp/Server/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/UTPAL/Downloads/PS1_MIC_090-Core/BlazorApp/Server/Areas/Identity/Pages/_ViewImports.cshtml]
@@ -262,10 +262,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/UTPAL/Downloads/PS1_MIC_090-Core/BlazorApp/Server/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/UTPAL/Downloads/PS1_MIC_090-Core/BlazorApp/Server/Views/Shared/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/UTPAL/Downloads/PS1_MIC_090-Core/BlazorApp/Server/Views/_ViewStart.cshtml]

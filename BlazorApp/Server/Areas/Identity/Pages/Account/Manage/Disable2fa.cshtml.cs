@@ -4,7 +4,7 @@
 
 using System;
 using System.Threading.Tasks;
-using BlazorApp.Server.Models;
+using BlazorApp.Server.Repository.Core;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -14,11 +14,11 @@ namespace BlazorApp.Server.Areas.Identity.Pages.Account.Manage
 {
     public class Disable2faModel : PageModel
     {
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<AspNetUser> _userManager;
         private readonly ILogger<Disable2faModel> _logger;
 
         public Disable2faModel(
-            UserManager<ApplicationUser> userManager,
+            UserManager<AspNetUser> userManager,
             ILogger<Disable2faModel> logger)
         {
             _userManager = userManager;

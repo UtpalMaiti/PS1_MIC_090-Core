@@ -1,4 +1,4 @@
-﻿using BlazorApp.Server.Data;
+using BlazorApp.Server.Data;
 using BlazorApp.Server.Models;
 
 using Microsoft.AspNetCore.Authentication;
@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.IdentityModel.Logging;
+using BlazorApp.Server.Repository.Core;
 
 namespace BlazorApp
 {
@@ -35,15 +36,16 @@ namespace BlazorApp
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            builder.Services.AddDefaultIdentity<AspNetUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+                .AddApiAuthorization<AspNetUser, ApplicationDbContext>();
 
-            builder.Services.AddAuthentication(o => {
-                o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            builder.Services.AddAuthentication(o =>
+            {
+                //o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                //o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddCookie(cfg => cfg.SlidingExpiration = true)
             .AddIdentityServerJwt()
             .AddJwtBearer(cfg =>
@@ -52,8 +54,8 @@ namespace BlazorApp
                     cfg.Authority = "http://localhost:7009/";
                     cfg.RequireHttpsMetadata = false;
                     cfg.SaveToken = true;
-                    cfg.Configuration = new OpenIdConnectConfiguration(); 
-        }); ;
+                    cfg.Configuration = new OpenIdConnectConfiguration();
+                }); 
 
             //builder.Services.AddAuthorization(options =>
             //{

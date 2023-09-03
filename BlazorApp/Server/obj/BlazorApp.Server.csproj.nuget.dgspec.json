@@ -148,6 +148,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.151, )"
+            },
             "Karambolo.AspNetCore.Bundling.NUglify": {
               "target": "Package",
               "version": "[3.6.1, )"

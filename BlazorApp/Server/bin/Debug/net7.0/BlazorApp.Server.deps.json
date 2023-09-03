@@ -10,6 +10,7 @@
         "dependencies": {
           "BlazorApp.Client": "1.0.0",
           "BlazorApp.Shared": "1.0.0",
+          "Dapper": "2.0.151",
           "Karambolo.AspNetCore.Bundling.NUglify": "3.6.1",
           "Karambolo.AspNetCore.Bundling.WebMarkupMin": "3.6.1",
           "LigerShark.WebOptimizer.Core": "3.0.386",
@@ -83,6 +84,14 @@
         }
       },
       "BuildBundlerMinifier2022/2.9.9": {},
+      "Dapper/2.0.151": {
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.151.35995"
+          }
+        }
+      },
       "Duende.IdentityServer/6.0.4": {
         "dependencies": {
           "Duende.IdentityServer.Storage": "6.0.4",
@@ -3296,6 +3305,13 @@
       "sha512": "sha512-Og58BG7SrUwHxu4S4uiKcrQ4XwlPqw88cmoWzX1cwZlKk9BCMiLNGXFBfn0H5FcaQV5sRAOEpP0Hq4gBouko0A==",
       "path": "buildbundlerminifier2022/2.9.9",
       "hashPath": "buildbundlerminifier2022.2.9.9.nupkg.sha512"
+    },
+    "Dapper/2.0.151": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mMcZgx1lim0/i1Ozu+lgnBM4GwNIHpCuxV6BV2ovsEfZAXRAq4jb6RIhxGDcVjtmXMLPpdp85jHPdDjBMMwejw==",
+      "path": "dapper/2.0.151",
+      "hashPath": "dapper.2.0.151.nupkg.sha512"
     },
     "Duende.IdentityServer/6.0.4": {
       "type": "package",

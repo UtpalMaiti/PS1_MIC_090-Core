@@ -413,6 +413,8 @@ C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwr
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\System.Configuration.dll.gz
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\service-worker.js
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\service-worker-assets.js
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\bundleconfig.json
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\libman.json
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\BlazorApp.Client.staticwebassets.runtime.json
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\BlazorApp.Client.dll
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\BlazorApp.Client.pdb
@@ -841,6 +843,8 @@ C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\stat
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\scopedcss\Shared\Scripts.razor.rz.scp.css
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\scopedcss\Shared\Styles.razor.rz.scp.css
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\scopedcss\bundle\BlazorApp.Client.styles.css
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\scopedcss\projectbundle\BlazorApp.Client.bundle.scp.css
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\service-worker\service-worker.js
@@ -850,7 +854,3 @@ C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\Blaz
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\refint\BlazorApp.Client.dll
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.pdb
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\ref\BlazorApp.Client.dll
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\bundleconfig.json
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\libman.json
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\scopedcss\Shared\Scripts.razor.rz.scp.css
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\scopedcss\Shared\Styles.razor.rz.scp.css
