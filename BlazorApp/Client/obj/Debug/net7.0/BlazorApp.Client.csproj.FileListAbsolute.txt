@@ -1,3 +1,9 @@
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.csproj.AssemblyReference.cache
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.AssemblyInfoInputs.cache
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.AssemblyInfo.cs
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.csproj.CoreCompileInputs.cache
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\blazor.boot.json
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\blazor.webassembly.js
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\BlazorApp.Client.dll
@@ -7,10 +13,10 @@ C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwr
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\dotnet.7.0.10.vzm6zpl6t5.js
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\dotnet.timezones.blat
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\dotnet.wasm
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\icudt.dat
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\icudt_CJK.dat
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\icudt_EFIGS.dat
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\icudt_no_CJK.dat
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\icudt.dat
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.dll
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.dll
@@ -411,10 +417,8 @@ C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwr
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.FileSystem.AccessControl.dll.gz
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.InteropServices.dll.gz
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\_framework\System.Configuration.dll.gz
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\service-worker.js
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\service-worker-assets.js
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\bundleconfig.json
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\libman.json
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\wwwroot\service-worker.js
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\BlazorApp.Client.staticwebassets.runtime.json
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\BlazorApp.Client.dll
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\BlazorApp.Client.pdb
@@ -621,12 +625,6 @@ C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\icud
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\icudt_no_CJK.dat
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\BlazorApp.Shared.dll
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\BlazorApp.Shared.pdb
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.csproj.AssemblyReference.cache
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.AssemblyInfoInputs.cache
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.AssemblyInfo.cs
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.csproj.CoreCompileInputs.cache
-C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\build-gz\13ahZjZs.gz
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\build-gz\5OvKKMwt.gz
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\build-gz\bdxYahC4.gz
@@ -854,3 +852,5 @@ C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\Blaz
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\refint\BlazorApp.Client.dll
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\BlazorApp.Client.pdb
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\ref\BlazorApp.Client.dll
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\bundleconfig.json
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\libman.json
