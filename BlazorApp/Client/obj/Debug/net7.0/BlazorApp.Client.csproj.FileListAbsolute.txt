@@ -854,3 +854,4 @@ C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\Blaz
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\ref\BlazorApp.Client.dll
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\bundleconfig.json
 C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\bin\Debug\net7.0\libman.json
+C:\Users\UTPAL\Downloads\PS1_MIC_090-Core\BlazorApp\Client\obj\Debug\net7.0\scopedcss\Pages\Index.razor.rz.scp.css

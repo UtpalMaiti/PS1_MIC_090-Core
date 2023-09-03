@@ -70,9 +70,31 @@
 
 
     const appController = function ($scope, $log, $window, appFactory, appService, appSettingsValue, appSettingsConstant) {
-        const vm =$scope;
+        const vm = $scope;
+
+        vm.products = [];
+
+
+        console.log(document);
+
+        vm.getProducts = function () {
+            fetch('https://dummyjson.com/products')
+                .then(res => res.json())
+                .then(json => {
+                    console.log(json);
+                    vm.products = json ?? []; 
+
+                    const ul = $("#exampleAnimateContainerId");
+                    if (ul) {
+
+                        //$("head").text("Hello world!");
+                    }
+
+                });  
+        }
+         
         function init() {
-           
+            vm.getProducts();
         }
         init();
     };
@@ -94,16 +116,18 @@
 
 
 
-    fetch('https://dummyjson.com/products/1')
-        .then(res => res.json())
-        .then(json => console.log(json))
+   
 
     $(document).ready(function () {
-        bootbox.alert('This is the default alert!');
+
+        $("button").click(function (x) {
+            console.log(x);
+            $("p").text("Hello world!");
+        });
     });
-    $(document).ready(function () {
-        bootbox.alert('This is the default alert!');
-    });
+    //$(document).ready(function () {
+    //    bootbox.alert('This is the default alert!');
+    //});
 
   
 

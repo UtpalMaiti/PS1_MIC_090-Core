@@ -40,5 +40,17 @@
     <!-- extends watching group to include *.js files -->
     <Watch Include="**\*.js" Exclude="node_modules\**\*;**\*.js.map;obj\**\*;bin\**\*" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="Pages\Index.razor.css" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="Pages\Index.razor.css" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="wwwroot\Pages\" />
+  </ItemGroup>
 
 </Project>

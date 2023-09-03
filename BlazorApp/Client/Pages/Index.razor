@@ -6,6 +6,56 @@
 @* @using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication *@
 
+@implements IAsyncDisposable
+@inject IJSRuntime JS
+
+@code {
+    private IJSObjectReference? jsModule;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            //         jsModule = await JS.InvokeAsync<IJSObjectReference>(
+            //             "import", "./Pages/DOMCleanup.razor.js");
+
+            //         var module = await JS.InvokeAsync<IJSObjectReference>("import",
+            // "./_content/AppJS/Components/Pages/Index.razor.js");
+
+            //         await jsModule.InvokeVoidAsync("DOMCleanup.createObserver");
+        }
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (jsModule is not null)
+        {
+            await jsModule.DisposeAsync();
+        }
+    }
+
+    private uint[] quoteArray =
+                   new uint[]
+                   {
+                            60, 101, 109, 62, 67, 97, 110, 39, 116, 32, 115, 116, 111, 112, 32,
+                            116, 104, 101, 32, 115, 105, 103, 110, 97, 108, 44, 32, 77, 97,
+                            108, 46, 60, 47, 101, 109, 62, 32, 45, 32, 77, 114, 46, 32, 85, 110,
+                            105, 118, 101, 114, 115, 101, 10, 10,
+                   };
+
+    private MarkupString text;
+    private async Task ConvertArray()
+    {
+        text =new MarkupString("Utpal");
+
+        // text = new(await JS.InvokeAsync<string>("convertArray", quoteArray));
+    }
+
+}
+
+
+
+<div id="cleanupDiv"></div>
 
 <PageTitle>Index</PageTitle>
 
@@ -13,7 +63,23 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<ul class="example-animate-container" id="exampleAnimateContainerId">
+
+   
+    <li class="animate-repeat" ng-repeat="p in products" ng-if="products.length > 0">
+        [{{$index + 1}}] - {{ p.description}}
+    </li>
+</ul>
+
+<p>
+    <button @onclick="ConvertArray">Convert Array</button>
+</p>
+    <button >Convert Array js</button>
+
+<p>
+    @text
+</p>
+
 
 @*        <h1>Users (@DataRepository.Users.Count())</h1>
 

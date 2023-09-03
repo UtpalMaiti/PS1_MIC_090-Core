@@ -1,3 +1,37 @@
+/* /Pages/Index.razor.rz.scp.css */
+.example-animate-container[b-x8jq25t3t1] {
+    background: white;
+    border: 1px solid black;
+    list-style: none;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.animate-repeat[b-x8jq25t3t1] {
+    line-height: 30px;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+    .animate-repeat.ng-move[b-x8jq25t3t1],
+    .animate-repeat.ng-enter[b-x8jq25t3t1],
+    .animate-repeat.ng-leave[b-x8jq25t3t1] {
+        transition: all linear 0.5s;
+    }
+
+        .animate-repeat.ng-leave.ng-leave-active[b-x8jq25t3t1],
+        .animate-repeat.ng-move[b-x8jq25t3t1],
+        .animate-repeat.ng-enter[b-x8jq25t3t1] {
+            opacity: 0;
+            max-height: 0;
+        }
+
+            .animate-repeat.ng-leave[b-x8jq25t3t1],
+            .animate-repeat.ng-move.ng-move-active[b-x8jq25t3t1],
+            .animate-repeat.ng-enter.ng-enter-active[b-x8jq25t3t1] {
+                opacity: 1;
+                max-height: 30px;
+            }
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-33op3vkbmc] {
     position: relative;
